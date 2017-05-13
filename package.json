@@ -1,8 +1,8 @@
 {
   "name": "@bes/snap",
   "version": "1.0.0",
-  "description": "Simple testing snapshot utility used in boilreact",
-  "main": "index.js",
+  "description": "Simple snapshot utility used in boilreact",
+  "main": "src/index.js",
   "scripts": {
     "test": "node tests/runner.js"
   },
