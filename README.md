@@ -26,3 +26,31 @@ snap({
   body:'<span>Boom</span>'
 });
 ```
+
+## Idea
+
+It works similarly to jest snapshot but with less magic. The idea is to create
+a file e.g. `snap.json` where the snapshot info will be saved.
+
+```json
+{
+  "000": {
+    "numId": "000",
+    "mess": "Hello, World!"
+  },
+  "001": {
+    "numId": "001",
+    "mess": "Boom"
+  }
+}
+```
+
+This while in a new directory saving the data themselves.
+
+```
+_snapshots
+├── html
+│   ├── 000.html
+│   └── 001.html
+└── snap.json
+```
