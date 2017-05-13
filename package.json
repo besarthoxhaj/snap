@@ -1,0 +1,20 @@
+{
+  "name": "@bes/snap",
+  "version": "1.0.0",
+  "description": "Simple testing snapshot utility used in boilreact",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/runner.js"
+  },
+  "author": "Bes",
+  "license": "ISC",
+  "devDependencies": {
+    "node-notifier": "^5.1.2",
+    "nodemon": "^1.11.0",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "js-beautify": "^1.6.14"
+  }
+}
