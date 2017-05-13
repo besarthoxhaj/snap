@@ -2,10 +2,14 @@
 
 Simple testing snapshot utility used in [boilreact](https://github.com/besarthoxhaj/boilreact)
 
+```
+$ npm i @bes/snap --save-dev
+```
+
 ## Usage
 
 ```js
-const snap = require('snap')({
+const snap = require('@bes/snap')({
   outputDir: './tests/_snapshots/html',
   outputFile: './tests/_snapshots/snap.json'
 });
