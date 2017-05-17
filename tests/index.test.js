@@ -1,5 +1,6 @@
 const test = require('tape');
 const fs = require('fs-extra');
+const { createMemoryHistory } = require('history');
 
 const snap = require('../src');
 const DIR_TEST = `${__dirname}/dirTests`;
@@ -39,5 +40,29 @@ test('Save snap body', t => {
       mess:'Hello, World!',
     }
   },'snapJson updated successfully');
+  t.end();
+});
+
+test('Save url/href of history', t => {
+
+  const history = createMemoryHistory();
+
+  history.push('/profile?the=query');
+
+  takeSnap({
+    numId:'002',
+    mess:'Hello, History!',
+    body:'<h1>Hello, History!</h1>',
+    history:history
+  });
+
+  const snapJson = fs.readJsonSync(`${DIR_TEST}/snap.json`);
+
+  t.deepEqual(snapJson['002'],{
+    mess: 'Hello, History!',
+    numId: '002',
+    href: '/profile?the=query',
+  },'snapJson with href updated successfully');
+
   t.end();
 });

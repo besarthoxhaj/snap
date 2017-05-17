@@ -12,6 +12,7 @@
   "author": "Bes",
   "license": "ISC",
   "devDependencies": {
+    "history": "^4.6.1",
     "node-notifier": "^5.1.2",
     "nodemon": "^1.11.0",
     "tape": "^4.6.3"
