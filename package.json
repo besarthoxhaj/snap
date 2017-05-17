@@ -1,6 +1,6 @@
 {
   "name": "@bes/snap",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Simple snapshot utility used in boilreact",
   "main": "src/index.js",
   "scripts": {
