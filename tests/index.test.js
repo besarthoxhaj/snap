@@ -66,3 +66,21 @@ test('Save url/href of history', t => {
 
   t.end();
 });
+
+test('Save attributes rect', t => {
+
+  takeSnap({
+    numId:'003',
+    rect: { w: 1000, y: 100 },
+    body:'<h1>Hello, World!</h1>'
+  });
+
+  const snapJson = fs.readJsonSync(`${DIR_TEST}/snap.json`);
+
+  t.deepEqual(snapJson['003'],{
+    numId: '003',
+    rect: { w: 1000, y: 100 }
+  },'rect saved successfully');
+
+  t.end();
+});

@@ -25,7 +25,7 @@ module.exports = ({outputDir, outputFile}) => {
 
   const jsonStore = fs.readJsonSync(outputFile);
 
-  return ({ numId, body, mess, history }) => {
+  return ({ numId, body, mess, history, rect }) => {
 
     const current = jsonStore[numId];
     const prettyBody = html(body,opts['html']);
@@ -33,7 +33,7 @@ module.exports = ({outputDir, outputFile}) => {
     // if current `numId` doesn't exists
     // create new one and exit
     if(current === undefined) {
-      jsonStore[numId] = { mess, numId };
+      jsonStore[numId] = { mess, numId, rect };
       if(history !== undefined) {
         const { pathname, search } = history.location;
         jsonStore[numId]['href'] = `${pathname}${search}`;
